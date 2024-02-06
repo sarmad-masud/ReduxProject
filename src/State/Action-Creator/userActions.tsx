@@ -1,3 +1,5 @@
+import { App, Button, Space } from 'antd';
+
 interface UserInfo {
   userId: string;
   name: string;
@@ -7,6 +9,10 @@ interface UserInfo {
   website: string;
   introduction: string;
 }
+
+
+
+
 
 export const login = (email: string, password: string) => {
   const mockUser: UserInfo = {
@@ -42,8 +48,8 @@ export const logout = () => {
 };
 
 export const addUser = (user: UserInfo) => {
-  console.log('USER ACTION => Adding user:');
   return {
+
     type: 'ADD_USER',
     payload: user,
   };
