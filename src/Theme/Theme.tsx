@@ -1,7 +1,6 @@
-import { Navbar } from './Navbar';
 import { Layout, theme } from 'antd';
 import UserDashboard from '../Components/UserDashboard';
-const { Content, Footer } = Layout;
+const { Content } = Layout;
 
 
 export const Theme = () => {
@@ -14,7 +13,6 @@ export const Theme = () => {
 
     return (
         <Layout>
-        <Navbar/>
 
             <Content style={{ padding: '40px 48px' }}>
 

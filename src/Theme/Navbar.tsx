@@ -1,17 +1,19 @@
 import { Layout, Menu } from 'antd';
-import { BrowserRouter as Router, Route, Link } from 'react-router-dom';
-import App from '../App';
-import Home from './Home';
-import Login from './login';
+import { Link } from 'react-router-dom';
 
 const { Header } = Layout;
 const MenuItems = [ 
-  { key: '1', label:(  <a> Home <Link to="/home" /></a>
+  { key: '1', 
+  label:(  <a> Home <Link to="/home" /></a> ) },
 
-  ) , path: <Link to="/home" /> },
-  { key: '2', label: 'About Us', path: '/about' },
-  { key: '3', label: 'Services', path: '/services' },
-  { key: '4', label: 'Login', path: '/login' },
+  { key: '2', 
+  label: (  <a> Users <Link to="/main" /></a> ) },
+
+  { key: '3', 
+  label: 'Services' },
+  
+  { key: '4', 
+  label: 'Contact' },
 ];
 
 

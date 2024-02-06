@@ -1,5 +1,4 @@
 import { Layout, Radio, RadioChangeEvent, Space, Tabs } from 'antd';
-import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import React, { useState } from 'react';
 import AddUser from './AddUser';
 import UserListTable from './UserList';

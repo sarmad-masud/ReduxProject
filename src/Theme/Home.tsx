@@ -3,7 +3,7 @@ import { Carousel } from 'antd';
 
 const contentStyle: React.CSSProperties = {
   margin: 0,
-  height: '160px',
+  height: '560px',
   color: '#fff',
   lineHeight: '160px',
   textAlign: 'center',
