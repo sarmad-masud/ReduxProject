@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { useDispatch } from 'react-redux';
 import { Form, Input, Button, Card, Flex } from 'antd';
 import { login } from '../State/Action-Creator/userActions';
-import UserDashboard from './UserDashboard';
+import UserDashboard from '../Components/UserDashboard';
 import { useNavigate } from 'react-router-dom';
 
 const Login = () => {
@@ -16,7 +16,7 @@ const Login = () => {
 
         if (result.type === 'LOGIN') {
             // If login is successful, navigate to the desired route using navigate
-            navigate('/user-dashboard'); // Adjust the route based on your application structure
+            navigate('/main'); // Adjust the route based on your application structure
         }
     };
 
