@@ -1,26 +1,47 @@
 import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import { Layout, theme } from 'antd';
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import { Navbar } from './Theme/Navbar';
+import Login from './Components/login';
+import UserDashboard from './Components/UserDashboard';
+import Home from './Theme/Home';
 
-function App() {
+const { Content, Footer } = Layout;
+
+const App: React.FC = () => {
+  const {
+    token: { colorBgContainer, borderRadiusLG },
+  } = theme.useToken();
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
+    <Layout>
+      <Navbar/>
+      <Content style={{ padding: '40px 48px' }}>
+
+        <div
+          style={{
+            background: colorBgContainer,
+            minHeight: 280,
+            padding: 24,
+            borderRadius: borderRadiusLG,
+          }}
         >
-          Learn React
-        </a>
-      </header>
-    </div>
+          <Router>
+            <Routes>
+            
+              <Route path="/home" element={<Home />}/>
+              <Route path="/login" element={<Login/>}/>
+              <Route path="/user-dashboard" element={<UserDashboard/>} />
+            </Routes>
+          </Router>
+
+        </div>
+      </Content>
+      <Footer style={{ textAlign: 'center' }}>
+        Ant Design ©{new Date().getFullYear()} Created by Sarmad Masud
+      </Footer>
+    </Layout>
   );
-}
+};
 
 export default App;
