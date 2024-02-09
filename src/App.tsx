@@ -6,6 +6,7 @@ import Login from './Theme/login';
 import UserDashboard from './Components/UserDashboard';
 import Home from './Theme/Home';
 import { Theme } from './Theme/Theme';
+import Services from './Components/Services';
 
 const { Content, Footer } = Layout;
 
@@ -27,6 +28,7 @@ const App: React.FC = () => {
         <Route path="/" element={<Login />} />
         <Route path="/main" element={<Theme />} />
         <Route path="/home" element={<Home />} />
+        <Route path="/Services" element={<Services />} />
         <Route path="/user-dashboard" element={<UserDashboard />} />
       </Routes>
 

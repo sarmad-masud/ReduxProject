@@ -10,10 +10,6 @@ interface UserInfo {
   introduction: string;
 }
 
-
-
-
-
 export const login = (email: string, password: string) => {
   const mockUser: UserInfo = {
     userId: '123',
