@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import { Button, Form, Input, InputNumber } from 'antd';
 import { useDispatch, useSelector } from 'react-redux';
 import { addUser,  UserInfo  } from '../Features/userSlice';
@@ -31,7 +31,7 @@ const AddUser: React.FC = () => {
         name: '',
         email: '',
         password: '',
-        age: null as number | null | undefined,
+        age: 0,
         website: '',
         introduction: '',
     });
@@ -42,12 +42,15 @@ const AddUser: React.FC = () => {
       
         return `${prefix}-${timestamp}-${randomSuffix}`;
       };
+      const formRef =  useRef<any>(null); 
 
     const onFinish = (values: typeof user) => {
       
         user.userId = generateUniqueUserId();
         console.log('Dispatching Form values', user);
-        dispatch(addUser(user));      
+        dispatch(addUser(user));
+        formRef.current.resetFields();
+ 
         
       };
 
@@ -62,6 +65,7 @@ const AddUser: React.FC = () => {
                 onFinish={onFinish}
                 style={{ maxWidth: 600 }}
                 validateMessages={validateMessages}
+                ref={formRef}
             >
                 <Form.Item name={['user', 'name']} label="Name" rules={[{ required: true }]}>
                     <Input

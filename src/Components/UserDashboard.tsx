@@ -2,6 +2,7 @@ import { Layout, Radio, RadioChangeEvent, Space, Tabs } from 'antd';
 import React, { useState } from 'react';
 import AddUser from './AddUser';
 import UserListTable from './UserList';
+import AddUser_FormikYup from './AddUser_FormikYup';
 
 const { TabPane } = Tabs;
 type TabPosition = 'left' | 'right' | 'top' | 'bottom';
@@ -35,6 +36,14 @@ const UserDashboard: React.FC = () => {
           <p>UserList</p>
           <UserListTable/>
         </TabPane>
+
+        
+        <TabPane tab="Formik Yup" key="3">
+          <p>Plese Fill The Form</p>
+          <AddUser_FormikYup/>
+        </TabPane>
+
+        
 
       </Tabs>
     </>
