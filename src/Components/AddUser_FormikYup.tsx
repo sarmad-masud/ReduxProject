@@ -3,6 +3,8 @@ import { useDispatch } from 'react-redux';
 import { addUser, UserInfo } from '../Features/userSlice';
 import { Formik, Field, ErrorMessage, FormikHelpers } from 'formik';
 import * as Yup from 'yup';
+import './AddUser_FormikYup.css';
+
 
 const initialValues: UserInfo = {
   userId: '',
@@ -70,7 +72,7 @@ const AddUser_FormikYup = () => {
               id="name"
               name="name"
             />
-            <ErrorMessage name="name" />
+            <ErrorMessage name="name" component="div" className="error-message" />
           </div>
           <div>
             <label htmlFor="email">Email</label>
@@ -79,7 +81,7 @@ const AddUser_FormikYup = () => {
               id="email"
               name="email"
             />
-            <ErrorMessage name="email" />
+            <ErrorMessage name="email" component="div" className="error-message"/>
           </div>
           <div>
             <label htmlFor="password">Password</label>
@@ -88,7 +90,7 @@ const AddUser_FormikYup = () => {
               id="password"
               name="password"
             />
-            <ErrorMessage name="password" />
+            <ErrorMessage name="password" component="div" className="error-message"/>
           </div>
           <div>
             <label htmlFor="age">Age</label>
@@ -97,7 +99,7 @@ const AddUser_FormikYup = () => {
               id="age"
               name="age"
             />
-            <ErrorMessage name="age" />
+            <ErrorMessage name="age" component="div" className="error-message"/>
           </div>
           <div>
             <label htmlFor="website">Website</label>
@@ -106,7 +108,7 @@ const AddUser_FormikYup = () => {
               id="website"
               name="website"
             />
-            <ErrorMessage name="website" />
+            <ErrorMessage name="website" component="div" className="error-message"/>
           </div>
           <div>
             <label htmlFor="introduction">Introduction</label>

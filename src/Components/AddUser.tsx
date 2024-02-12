@@ -61,7 +61,7 @@ const AddUser: React.FC = () => {
         <div>
             <Form
                 {...layout}
-                name="nest-messages"
+                name="antd-AddUser-Form"
                 onFinish={onFinish}
                 style={{ maxWidth: 600 }}
                 validateMessages={validateMessages}
